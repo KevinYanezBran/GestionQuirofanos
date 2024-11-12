@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane content-id="main-content">
+    <ion-menu content-id="main-content">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Menú</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item routerLink="/home" routerDirection="root">Inicio</ion-item>
+          <ion-item routerLink="/quirofanos" routerDirection="root">Quirófanos</ion-item>
+          <ion-item routerLink="/busqueda-equipos" routerDirection="root">Búsqueda de Equipos</ion-item>
+          <ion-item routerLink="/equipos" routerDirection="root">Equipos</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
+

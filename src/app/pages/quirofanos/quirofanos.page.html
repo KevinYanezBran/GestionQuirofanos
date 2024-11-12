@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Quirófanos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let quirofano of quirofanos" (click)="verEquipos(quirofano)">
+      <ion-label>
+        <h2>Quirófano {{quirofano.numero}}</h2>
+        <p>Estado: {{quirofano.estado}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administración de Equipos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let equipo of equipos">
+      <ion-label>
+        <h2>{{ equipo.nombre }}</h2>
+        <p>Estado: {{ equipo.estado }}</p>
+      </ion-label>
+      <ion-button color="primary" (click)="editarEquipo(equipo)">Editar</ion-button>
+      <ion-button color="danger" (click)="eliminarEquipo(equipo.id)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="editando">
+    <ion-input [(ngModel)]="equipoEditado!.nombre" placeholder="Nombre del equipo"></ion-input>
+    <ion-select [(ngModel)]="equipoEditado!.estado">
+      <ion-select-option value="Operativo">Operativo</ion-select-option>
+      <ion-select-option value="Mantenimiento">Mantenimiento</ion-select-option>
+    </ion-select>
+    <ion-button color="primary" (click)="guardarEdicion()">Guardar</ion-button>
+    <ion-button color="light" (click)="cancelarEdicion()">Cancelar</ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="!editando">
+    <ion-input [(ngModel)]="nuevoEquipo.nombre" placeholder="Nuevo equipo"></ion-input>
+    <ion-select [(ngModel)]="nuevoEquipo.estado">
+      <ion-select-option value="Operativo">Operativo</ion-select-option>
+      <ion-select-option value="Mantenimiento">Mantenimiento</ion-select-option>
+    </ion-select>
+    <ion-button color="primary" (click)="agregarEquipo()">Agregar</ion-button>
+  </ion-item>
+</ion-content>

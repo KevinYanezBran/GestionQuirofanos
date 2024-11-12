@@ -8,8 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'quirofanos',
     pathMatch: 'full'
+  },
+  {
+    path: 'quirofanos',
+    loadChildren: () => import('./pages/quirofanos/quirofanos.module').then( m => m.QuirofanosPageModule)
+  },
+  {
+    path: 'detalle-quirofano',
+    loadChildren: () => import('./pages/detalle-quirofano/detalle-quirofano.module').then( m => m.DetalleQuirofanoPageModule)
+  },
+  {
+    path: 'busqueda-equipos',
+    loadChildren: () => import('./pages/busqueda-equipos/busqueda-equipos.module').then( m => m.BusquedaEquiposPageModule)
+  },
+  {
+    path: 'equipos',
+    loadChildren: () => import('./pages/equipos/equipos.module').then( m => m.EquiposPageModule)
   },
 ];
 

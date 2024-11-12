@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Búsqueda de Equipos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="filtro" placeholder="Buscar..."></ion-input>
+    <ion-button (click)="buscar()">Buscar</ion-button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let equipo of equipos">
+      <ion-label>
+        <h2>{{ equipo.nombre }}</h2>
+        <p>Estado: {{ equipo.estado }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+  

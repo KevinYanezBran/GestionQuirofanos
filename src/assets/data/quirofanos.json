@@ -1,0 +1,23 @@
+{
+    "quirofanos": [
+      {
+        "id": 1,
+        "numero": "Q1",
+        "estado": "Disponible",
+        "equipos": [
+          { "id": 1, "nombre": "Monitor", "estado": "Operativo" },
+          { "id": 2, "nombre": "Respirador", "estado": "Mantenimiento" }
+        ]
+      },
+      {
+        "id": 2,
+        "numero": "Q2",
+        "estado": "En Uso",
+        "equipos": [
+          { "id": 3, "nombre": "Electrocardiógrafo", "estado": "Operativo" },
+          { "id": 4, "nombre": "Mesa Quirúrgica", "estado": "Operativo" }
+        ]
+      }
+    ]
+  }
+  
